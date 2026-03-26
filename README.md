@@ -58,6 +58,8 @@ CREATE DATABASE back
 
 El backend estará disponible en: [http://localhost:8081/examen_back_rubi/]
 
+En el archivo de DataSeeder.java se tiene el archivo para la ejecuón de insertado de 50 registros aleatorios.
+
 ## 5. Configuración del frontend (Angular 18)
 
 1. Clonar frontend dentro del proyecto o en carpeta separada:
