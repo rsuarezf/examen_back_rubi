@@ -8,6 +8,8 @@ import com.demo.rubi.dto.DomicilioDTO;
 import com.demo.rubi.dto.UsuarioResponseDTO;
 import com.demo.rubi.model.Usuario;
 import com.demo.rubi.repository.UsuarioRepository;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +19,6 @@ import org.springframework.stereotype.Service;
  *
  * @author Admin
  */
-
 @Service
 public class UsuarioService {
 
@@ -37,8 +38,13 @@ public class UsuarioService {
         dto.setNombre(u.getNombre());
         dto.setApellidoPaterno(u.getApellidoPaterno());
         dto.setApellidoMaterno(u.getApellidoMaterno());
-        dto.setNombreUsuario(u.getNombreUsuario());        
-        
+        dto.setNombreUsuario(u.getNombreUsuario());
+        dto.setFechaNacimiento(u.getFechaNacimiento());
+
+        if (u.getFechaNacimiento() != null) {
+            dto.setEdad(Period.between(u.getFechaNacimiento(), LocalDate.now()).getYears());
+        }
+
         if (u.getDomicilio() != null) {
             DomicilioDTO d = new DomicilioDTO();
             d.setId(u.getDomicilio().getId());

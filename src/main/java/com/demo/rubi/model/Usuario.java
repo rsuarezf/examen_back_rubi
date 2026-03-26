@@ -41,6 +41,8 @@ public class Usuario {
 
     @Column(name = "nombre_usuario", nullable = false, unique = true, length = 50)
     private String nombreUsuario;
+    @Column(name = "fecha_nacimiento", nullable = false, length = 10)
+    private LocalDate fechaNacimiento;
 
     @Column(name = "contrasena", nullable = false)
     private String contrasena;
@@ -52,16 +54,17 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Long id, String nombre, String apellidoPaterno, String apellidoMaterno, String nombreUsuario, String contrasena, Domicilio domicilio) {
+    public Usuario(Long id, String nombre, String apellidoPaterno, String apellidoMaterno, String nombreUsuario, LocalDate fechaNacimiento, String contrasena, Domicilio domicilio) {
         this.id = id;
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.nombreUsuario = nombreUsuario;
+        this.fechaNacimiento = fechaNacimiento;
         this.contrasena = contrasena;
         this.domicilio = domicilio;
     }
- 
+
     public Long getId() {
         return id;
     }
@@ -110,6 +113,14 @@ public class Usuario {
         this.contrasena = contrasena;
     }
 
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     public Domicilio getDomicilio() {
         return domicilio;
     }
@@ -117,5 +128,4 @@ public class Usuario {
     public void setDomicilio(Domicilio domicilio) {
         this.domicilio = domicilio;
     }
-
 }

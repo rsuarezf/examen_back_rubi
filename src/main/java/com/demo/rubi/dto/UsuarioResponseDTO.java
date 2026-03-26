@@ -4,20 +4,23 @@
  */
 package com.demo.rubi.dto;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author Admin
  */
 public class UsuarioResponseDTO {
 
-    private Long id;
+   private Long id;
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
     private String nombreUsuario;
+    private LocalDate fechaNacimiento;
     private int edad;
     private DomicilioDTO domicilio;
-
+   
     public Long getId() {
         return id;
     }
@@ -58,6 +61,14 @@ public class UsuarioResponseDTO {
         this.nombreUsuario = nombreUsuario;
     }
 
+    public LocalDate getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
     public int getEdad() {
         return edad;
     }
@@ -66,6 +77,7 @@ public class UsuarioResponseDTO {
         this.edad = edad;
     }
 
+    
     public DomicilioDTO getDomicilio() {
         return domicilio;
     }
@@ -73,5 +85,4 @@ public class UsuarioResponseDTO {
     public void setDomicilio(DomicilioDTO domicilio) {
         this.domicilio = domicilio;
     }
-
 }
