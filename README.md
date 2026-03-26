@@ -76,6 +76,7 @@ cd examen_front_Rubi_Suarez
 4. Ejecutar frontend:
 
 ```bash
+npm install
 ng serve
 ```
 
